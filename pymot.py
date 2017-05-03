@@ -235,7 +235,7 @@ class MOTEvaluation:
 #                correspondencelist.append("DIFF correspondence %s %s %.2f" % (gt_id, hypo_id, 1.0 / munkres_matrix[gt_index][hypo_index]))
             correspondencelist.append("DIFF correspondence %s %s" % (gt_id, hypo_id))
             correspondences[gt_id] = hypo_id
-            self.total_overlap_ += overlap
+            self.total_overlap_ += 1.0 / munkres_matrix[gt_index][hypo_index]
             
 
             # Count "recoverable" and "non-recoverable" mismatches
